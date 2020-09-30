@@ -6,7 +6,9 @@
 CACHEDIR=$HOME/.cache/rclone-backup-script
 BACKUPDIR=/mnt/pool/rclonesync
 REMOTE1=gdrive_unlimited_crypt:/
+R1OPTIONS="sync -P --drive-stop-on-upload-limit"
 REMOTE2=opencrypt:/
+R2OPTIONS="sync -P"
 
 # if the cache directories do not already exit, create them
 [[ -d $CACHEDIR ]] || mkdir "$CACHEDIR"
@@ -40,17 +42,16 @@ do
         "Run sync")
 
     		#print what is happening with a 30 second timer
-    		tsecs=30
+    		tsecs=1 #default 30. lowered for testing
     		while [ $tsecs -gt 0 ]
     		do
     		    printf "\r\033[KSyncing $REMOTE1 and then $REMOTE2 in %.d seconds" $((tsecs--))
     		    sleep 1
     		done
 
-	    #rclone sync -P $BACKUPDIR $REMOTE1
-	    #rclone sync -P $BACKUPDIR $REMOTE2
-	    ping google.com -c 4
-	    ping cisco.com -c 4
+	    echo " "
+	    echo "rclone $R1OPTIONS $BACKUPDIR $REMOTE1"
+	    echo "rclone $R2OPTIONS $BACKUPDIR $REMOTE2"
 	    break
             ;;
         "Show diff again")
