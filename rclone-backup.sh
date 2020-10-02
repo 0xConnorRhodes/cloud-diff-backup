@@ -42,7 +42,7 @@ do
         "Run sync")
 
     		#print what is happening with a 30 second timer
-    		tsecs=1 #default 30. lowered for testing
+    		tsecs=30 #default 30. lowered for testing
     		while [ $tsecs -gt 0 ]
     		do
     		    printf "\r\033[KSyncing $REMOTE1 and then $REMOTE2 in %.d seconds" $((tsecs--))
@@ -50,8 +50,8 @@ do
     		done
 
 	    echo " "
-	    echo "rclone $R1OPTIONS $BACKUPDIR $REMOTE1"
-	    echo "rclone $R2OPTIONS $BACKUPDIR $REMOTE2"
+	    rclone $R1OPTIONS $BACKUPDIR $REMOTE1
+	    rclone $R2OPTIONS $BACKUPDIR $REMOTE2
 	    break
             ;;
         "Show diff again")
