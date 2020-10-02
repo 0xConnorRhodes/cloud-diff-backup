@@ -51,10 +51,14 @@ do
     		done
 
 	    echo " "
-	    rclone $R1OPTIONS $BACKUPDIR $REMOTE1
-	    rclone $R2OPTIONS $BACKUPDIR $REMOTE2
+	    figlet -ctf "slant" "running dedupe on $REMOTE1"
 	    rclone $DEDUPE $REMOTE1
+	    figlet -ctf "slant" "*syncing* $REMOTE1"
+	    rclone $R1OPTIONS $BACKUPDIR $REMOTE1
+	    figlet -ctf "slant" "running dedupe on $REMOTE2"
 	    rclone $DEDUPE $REMOTE2
+	    figlet -ctf "slant" "*syncing* $REMOTE2"
+	    rclone $R2OPTIONS $BACKUPDIR $REMOTE2
 	    break
             ;;
         "Show diff again")
