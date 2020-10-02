@@ -9,6 +9,7 @@ REMOTE1=gdrive_unlimited_crypt:/
 R1OPTIONS="sync -P --drive-stop-on-upload-limit"
 REMOTE2=opencrypt:/
 R2OPTIONS="sync -P"
+DEDUPE="dedupe -P --dedupe-mode rename"
 
 # if the cache directories do not already exit, create them
 [[ -d $CACHEDIR ]] || mkdir "$CACHEDIR"
@@ -52,6 +53,8 @@ do
 	    echo " "
 	    rclone $R1OPTIONS $BACKUPDIR $REMOTE1
 	    rclone $R2OPTIONS $BACKUPDIR $REMOTE2
+	    rclone $DEDUPE $REMOTE1
+	    rclone $DEDUPE $REMOTE2
 	    break
             ;;
         "Show diff again")
