@@ -51,13 +51,13 @@ do
     		done
 
 	    echo " "
-	    figlet -ctf "slant" "dedupe $REMOTE1"
+	    figlet -ctf "smslant" "dedupe $REMOTE1"
 	    rclone $DEDUPE $REMOTE1
-	    figlet -ctf "slant" "sync $REMOTE1"
+	    figlet -ctf "smslant" "sync $REMOTE1"
 	    rclone $R1OPTIONS $BACKUPDIR $REMOTE1
-	    figlet -ctf "slant" "dedupe $REMOTE2"
+	    figlet -ctf "smslant" "dedupe $REMOTE2"
 	    rclone $DEDUPE $REMOTE2
-	    figlet -ctf "slant" "sync $REMOTE2"
+	    figlet -ctf "smslant" "sync $REMOTE2"
 	    rclone $R2OPTIONS $BACKUPDIR $REMOTE2
 	    break
             ;;
