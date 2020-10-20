@@ -42,8 +42,8 @@ do
     case $opt in
         "Run sync")
 
-    		#print what is happening with a 30 second timer
-    		tsecs=30 #default 30. lowered for testing
+    		#print what is happening with a 10 second timer
+    		tsecs=10 #default 30. lowered for testing
     		while [ $tsecs -gt 0 ]
     		do
     		    printf "\r\033[KSyncing $REMOTE1 and then $REMOTE2 in %.d seconds" $((tsecs--))
