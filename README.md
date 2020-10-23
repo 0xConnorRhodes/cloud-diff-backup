@@ -1,4 +1,4 @@
-# rclone-cloud-backup
+# Cloud Diff Backup
 Rclone backup script which shows local changes first
 
 ## Project Goal.
