@@ -1,7 +1,7 @@
 # Cloud Diff Backup
 Rclone backup script which shows local changes first
 
-![Screenshot](screenshot.png?raw=true)
+![Screenshot](screenshot.png)
 
 ## Project Goal.
 A fast bash-based locally generated summary of changes on your local file-system since the last backup.
